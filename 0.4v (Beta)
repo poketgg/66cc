@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="EUC-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    function showClock()
+    {
+        var currentDate=new Date();
+        var divClock=document.getElementById("divClock");
+        var apm=currentDate.getHours();
+        if(apm<12)
+        {
+            apm="오전　";
+        }
+        else
+        {
+            apm="오후　";
+        }
+        
+        var msg =apm +(currentDate.getHours()-12)+"시 ";
+        msg += currentDate.getMinutes() + "분 ";
+        msg += currentDate.getSeconds() + "초　" + getTodayLabel()
+        
+        divClock.innerText=msg;
+        
+        setTimeout(showClock,1000);
+    }
+
+    function getTodayLabel() {
+    
+    var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+    
+    var today = new Date().getDay();
+    var todayLabel = week[today];
+    
+    return todayLabel;
+    }
+ 
+    today_week=getTodayLabel()
+    /*============*/
+    let a = new Date().getHours();
+    let b  = new Date().getMinutes();
+
+    if(a == 9 && b == 0){
+        
+    }
+
+</script>
+
+
+    <style>
+        h1{
+            font-size : 4.5rem;
+            text-align: center;
+            color : rgb(255, 0, 150);
+            font-family: 'S-Core dream 7';
+        }
+    
+        .table{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        .clock{
+            margin-left: auto;
+            margin-right : auto;
+            text-align: center;
+            font-size: 3.0rem;
+            font-family: 'S-Core Dream 6';
+            color : rgb(255, 255, 255);
+            background-color: rgb(255, 0, 150);
+        }
+
+
+        .google, .dimigoin, .morning, .Korean, .social, .math, 
+        .science, .English, .PE{
+            font-size: 3.1rem;
+            color :rgb(0, 0, 0);
+            text-decoration: none;
+            font-family: 'S-Core dream 5';
+            text-align: center;
+        }
+
+
+        h2, h3{
+            font-size : 1.5rem;
+            color : gray;
+            font-family: 'S-Core Dream 5';
+            text-align: center;
+        }
+    
+    
+        @media ( max-width: 1080px) {
+            .google, .dimigoin, .morning, .Korean, .social, .math, 
+            .science, .English, .PE{
+                font-size : 2.3rem;
+            }
+    
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+    
+        @media ( max-width: 790px) {
+            .google, .dimigoin, .morning, .Korean, .social, .math, 
+            .science, .English, .PE, {
+                font-size : 1.5rem ;
+            }
+    
+            h1{
+                font-size: 2.4rem;
+            }
+        }
+    
+        @media ( max-width: 700px) {
+            .google, .dimigoin, .morning, .Korean, .social, .math, 
+            .science, .English, .PE {
+                font-size : 0.75rem
+            }
+
+    /* 여기까진 과목 이동 태그의 크기입니다.*/
+
+
+         @media ( max-width: 1080px) {
+            .clock {
+                font-size : 2.5rem;
+            }
+    
+        }
+    
+        @media ( max-width: 790px) {
+            .clock {
+                font-size : 2.0rem;
+            }
+    
+        }
+    
+        @media ( max-width: 700px) {
+            .clock {
+                font-size : 1.5rem;
+            }
+        }
+        }
+    
+    /* 여기까지는 시계의 크기 지정입니다. */
+
+        /*
+        .dimigoin{
+            font-size: 50px;
+            color : black;
+            text-decoration: none;
+            font-family: 'S-Core dream 5';
+        }
+        .morning{
+            font-size: 50px;
+            color : black;
+            text-decoration: none;
+            font-family: 'S-Core dream 5';
+        }*/
+    </style>
+</head>
+<body>
+    <title>Z. A. L</title>
+    <h1>Zoom Auto Launcher HTML Ver. h.1v(Beta)</h1>
+    <h2>현재 시간</h2><body onload="showClock()">
+        <div id="divClock" class="clock"></div></br><br/>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td> 
+                    <a class="google" href="https://hcs.eduro.go.kr/#/relogin">자가진단</a>
+                </td>
+                <td>
+                    <a class="dimigoin" href="https://dimigo.in">디미고인</a>
+                </td>
+                <td>
+                    <a class="morning" href="https://meet.google.com/pbd-kamr-uvc">아침조회</a>
+                </td>
+                <td>
+                    <a class="Korean" href="https://zoom.us/j/5377141697">국어</a>
+                </td>
+            </tr>
+            <tr>
+            <tr>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+                <td> 
+                    <a class="math" href="https://zoom.us/j/6838770867">　수학</a>
+                </td>
+                <td>
+                    <a class="science" href="https://zoom.us/j/2693268647">　과학</a>
+                </td>
+                <td>
+                    <a class="English" href="https://zoom.us/j/7654919677">　영어</a>
+                </td>
+                <td>
+                    <a class="PE" href="https://zoom.us/j/7760965125">체육</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

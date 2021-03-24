@@ -7,11 +7,13 @@
 
 
     <style>
-        h1{
+        .title{
             font-size : 4.5rem;
-            text-align: center;
             color : rgb(255, 0, 150);
             font-family: 'S-Core dream 7';
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
     
         .table{
@@ -59,34 +61,40 @@
     
         @media ( max-width: 1080px) {
             table td, a {
-                font-size : 2.3rem;
+                font-size : 2.5rem;
             }
     
-            h1{
+            .title{
                 font-size: 3.5rem;
             }
         }
     
         @media ( max-width: 790px) {
             table td, a{ 
-                font-size : 1.5rem ;
+                font-size : 1.9rem ;
             }
     
-            h1{
+            .title{
                 font-size: 2.4rem;
             }
+        }
         
     
         @media ( max-width: 700px) {
             table td, a {
-                font-size : 0.75rem
+                font-size : 1.3rem
             }
+        }
 
     /* 여기까진 과목 이동 태그의 크기입니다.*/
 
 
          @media ( max-width: 1080px) {
             .clock {
+                font-size : 3.1rem;
+            }
+
+            .zaga, .dimigoin {
                 font-size : 2.5rem;
             }
     
@@ -94,16 +102,24 @@
     
         @media ( max-width: 790px) {
             .clock {
-                font-size : 2.0rem;
+                font-size : 2.5rem;
             }
+
+            .zaga, .dimigoin {
+                font-size : 2.1rem;
+            }
+    
     
         }
     
         @media ( max-width: 700px) {
             .clock {
-                font-size : 1.5rem;
+                font-size : 1.8rem;
             }
-        }
+
+            .zaga, .dimigoin{
+                font-size : 1.4rem;
+            }
         }
         tr {
             height: 30px;
@@ -129,7 +145,8 @@
 
 <body>
     <title>Z. A. L</title>
-    <h1>Zoom Auto Launcher HTML Ver. 2.0v</h1>
+    　
+    <a class="title" href="https://poketgg.github.io/ZAL/"><b>Zoom Auto Launcher HTML Ver. 2.0v</b></a><br/>
     <h2>현재 시간</h2><body onload="showClock()">
         <div id="divClock" class="clock"></div></br><br/>
 

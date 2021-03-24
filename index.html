@@ -253,9 +253,9 @@
             }
             
             if(apm +(currentDate.getHours()) >= 12) {
-                var msg =apm +(currentDate.getHours()-12)+"시 ";
-            } else {
                 var msg =apm +(currentDate.getHours())+"시 ";
+            } else {
+                var msg =apm +(currentDate.getHours()-12)+"시 ";
             }
             msg += currentDate.getMinutes() + "분 ";
             msg += currentDate.getSeconds() + "초　"+  getTodayLabel()

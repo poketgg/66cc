@@ -140,6 +140,9 @@
             text-decoration: none;
             font-family: 'S-Core dream 5';
         }*/
+        .dimigoin_img, .zaga_img {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -154,10 +157,10 @@
         <tbody>
             <tr>
                 <td> 
-                    <a class="zaga" href="https://hcs.eduro.go.kr/#/relogin" target="blank"><b>　자가진단　</b></a></br></br>
+                    <img class="zaga_img" src="/자가진단2.png" alt = "로딩중.." width="300" onclick="go_zaga_img();"></br></br>
                 </td>
                 <td>
-                    <a class="dimigoin" href="https://dimigo.in" target="blank"><b>　디미고인　</b></a></br></br>
+                    <img class="dimigoin_img" src="/dimigoin.png" alt = "로딩중.." width="200" onclick="go_dimigoin();"></br></br>
                 </td>
             </tr>
                 <td>1교시</td>
@@ -256,17 +259,14 @@
             if(apm<12)
             {
                 apm="오전　";
+                var msg =apm +(currentDate.getHours())+"시 "
             }
             else
             {
                 apm="오후　";
+                var msg =apm +(currentDate.getHours()-12)+"시 "
             }
             
-            if(apm +(currentDate.getHours()) >= 13) {
-                var msg =apm +(currentDate.getHours()-12)+"시 ";
-            } else {
-                var msg =apm +(currentDate.getHours())+"시 ";
-            }
             msg += currentDate.getMinutes() + "분 ";
             msg += currentDate.getSeconds() + "초　"+  getTodayLabel()
             
@@ -312,8 +312,9 @@
             '미술': 'https://zoom.us/j/5135798594',
             '진로': 'https://zoom.us/j/3490119479',
             'HR': 'https://calendar.google.com/calendar/u/1/r?pli=1',
-            'CA( 링크 없음! )': 'about:blank',
-            '자가진단':'https://hcs.eduro.go.kr/#/relogin'
+            'CA( 링크 없음! )': 'https://poketgg.github.io/ZAL/',
+            '자가진단':'https://hcs.eduro.go.kr/#/relogin',
+            '수업이 없어요 !': 'https://poketgg.github.io/ZAL'
         }
         let _1a = document.createElement("a");
         let _2a = document.createElement("a");
@@ -394,6 +395,10 @@
         } else if(today_week == '주말') {
             add(today_week);
         }
+
+        let go_dimigoin = () => {window.open("https://dimigo.in", "_blank");}
+
+        let go_zaga_img = () => {window.open("https://hcs.eduro.go.kr/#/relogin", "_blank");}
     
     </script>
 </body>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="EUC-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        .title{
+            font-size : 4.5rem;
+            color : rgb(255, 0, 150);
+            font-family: 'S-Core dream 7';
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    
+        .table{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        .clock{
+            margin-left: auto;
+            margin-right : auto;
+            text-align: center;
+            font-size: 3.0rem;
+            font-family: 'S-Core Dream 6';
+            color : rgb(255, 255, 255);
+            background-color: rgb(255, 0, 150);
+        }
+
+        .zaga, .dimigoin{
+            font-size: 2.7rem;
+            color :rgb(255, 255, 255);
+            background-color: black;
+            box-shadow: rgb(92, 87, 87);
+        }
+
+
+        table td, a {
+            font-size: 3.1rem;
+            color :rgb(0, 0, 0);
+            text-decoration: none;
+            font-family: 'S-Core dream 5';
+            text-align: center;
+        }
+
+
+        h2, h3{
+            font-size : 1.5rem;
+            color : gray;
+            font-family: 'S-Core Dream 5';
+            text-align: center;
+        }
+
+    
+    
+        @media ( max-width: 1080px) {
+            table td, a {
+                font-size : 2.5rem;
+            }
+    
+            .title{
+                font-size: 3.5rem;
+            }
+        }
+    
+        @media ( max-width: 790px) {
+            table td, a{ 
+                font-size : 1.9rem ;
+            }
+    
+            .title{
+                font-size: 2.4rem;
+            }
+        }
+        
+    
+        @media ( max-width: 700px) {
+            table td, a {
+                font-size : 1.3rem
+            }
+        }
+
+    /* 여기까진 과목 이동 태그의 크기입니다.*/
+
+
+         @media ( max-width: 1080px) {
+            .clock {
+                font-size : 3.1rem;
+            }
+
+            .zaga, .dimigoin {
+                font-size : 2.7rem;
+            }
+    
+        }
+    
+        @media ( max-width: 790px) {
+            .clock {
+                font-size : 2.5rem;
+            }
+
+            .zaga, .dimigoin {
+                font-size : 2.2rem;
+            }
+    
+    
+        }
+    
+        @media ( max-width: 700px) {
+            .clock {
+                font-size : 1.8rem;
+            }
+
+            .zaga, .dimigoin{
+                font-size : 1.5rem;
+            }
+        }
+        tr {
+            height: 30px;
+        }
+    
+    /* 여기까지는 시계의 크기 지정입니다. */
+
+        /*
+        .dimigoin{
+            font-size: 50px;
+            color : black;
+            text-decoration: none;
+            font-family: 'S-Core dream 5';
+        }
+        .morning{
+            font-size: 50px;
+            color : black;
+            text-decoration: none;
+            font-family: 'S-Core dream 5';
+        }*/
+    </style>
+</head>
+
+<body>
+    <title>Z. A. L</title>
+    　
+    <a class="title" href="https://poketgg.github.io/ZAL/"><b>Zoom Auto Launcher HTML Ver. 2.0v</b></a><br/>
+    <h2>현재 시간</h2><body onload="showClock()">
+        <div id="divClock" class="clock"></div></br><br/>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td> 
+                    <a class="zaga" href="https://hcs.eduro.go.kr/#/relogin" target="blank"><b>　자가진단　</b></a></br></br>
+                </td>
+                <td>
+                    <a class="dimigoin" href="https://dimigo.in" target="blank"><b>　디미고인　</b></a></br></br>
+                </td>
+            </tr>
+                <td>1교시</td>
+                <td id="_1class"></td>
+            </tr>
+            <tr>
+                <td>2교시</td>
+                <td id="_2class"></td>
+            </tr>
+            <tr>
+                <td>3교시</td>
+                <td id="_3class"></td>
+            </tr>
+            <tr>
+                <td>4교시</td>
+                <td id="_4class"></td>
+            </tr>
+            <tr>
+                <td>5교시</td>
+                <td id="_5class"></td>
+            </tr>
+            <tr>
+                <td>6교시</td>
+                <td id="_6class"></td>
+            </tr>
+            <tr>
+                <td>7교시</td>
+                <td id="_7class"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let timetable = {
+            월요일: {
+                '1교시': '미술',
+                '2교시': '컴시',
+                '3교시': '국어',
+                '4교시': '수학',
+                '5교시': '영어',
+                '6교시': '체육',
+                '7교시': '창체',
+            },
+            화요일: {
+                '1교시': '사회',
+                '2교시': '수학',
+                '3교시': '영어',
+                '4교시': '국어',
+                '5교시': '과학',
+                '6교시': '미술',
+                '7교시': '진로',
+            },
+            수요일: {
+                '1교시': '과학',
+                '2교시': '사물',
+                '3교시': '사물',
+                '4교시': '진로',
+                '5교시': '체육',
+                '6교시': 'CA( 링크 없음! )'
+            },
+            목요일: {
+                '1교시': '수학',
+                '2교시': '컴시',
+                '3교시': '영어',
+                '4교시': '사회',
+                '5교시': '플밍',
+                '6교시': '플밍',
+                '7교시': '미술',
+            },
+            금요일: {
+                '1교시': '사물',
+                '2교시': '사회',
+                '3교시': '플밍',
+                '4교시': '플밍',
+                '5교시': '과학',
+                '6교시': '국어',
+                '7교시': '컴시',
+
+            },
+            주말: {
+                '1교시': '수업이 없어요 !',
+                '2교시': '수업이 없어요 !',
+                '3교시': '수업이 없어요 !',
+                '4교시': '수업이 없어요 !',
+                '5교시': '수업이 없어요 !',
+                '6교시': '수업이 없어요 !',
+                '7교시': '수업이 없어요 !',
+            }
+        }
+    
+        function showClock()
+        {
+            var currentDate=new Date();
+            var divClock=document.getElementById("divClock");
+            var apm=currentDate.getHours();
+            if(apm<12)
+            {
+                apm="오전　";
+            }
+            else
+            {
+                apm="오후　";
+            }
+            
+            if(apm +(currentDate.getHours()) >= 13) {
+                var msg =apm +(currentDate.getHours()-12)+"시 ";
+            } else {
+                var msg =apm +(currentDate.getHours())+"시 ";
+            }
+            msg += currentDate.getMinutes() + "분 ";
+            msg += currentDate.getSeconds() + "초　"+  getTodayLabel()
+            
+            divClock.innerText=msg;
+            
+            setTimeout(showClock,1000);
+        }
+    
+        function getTodayLabel() {
+        
+            var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+            
+            var today = new Date().getDay();
+            var todayLabel = week[today];
+            
+            return todayLabel;
+        }
+     
+        today_week=getTodayLabel()
+        if(today_week == '토요일' || today_week == '일요일') today_week = '주말';
+        /*============*/
+        let a = new Date().getHours();
+        let b  = new Date().getMinutes();
+
+        let _1class = document.getElementById("_1class");
+        let _2class = document.getElementById("_2class");
+        let _3class = document.getElementById("_3class");
+        let _4class = document.getElementById("_4class");
+        let _5class = document.getElementById("_5class");
+        let _6class = document.getElementById("_6class");
+        let _7class = document.getElementById("_7class");
+
+        let zoom_location = {
+            '수학': 'https://zoom.us/j/6838770867',
+            '국어': 'https://zoom.us/j/5377141697',
+            '영어': 'https://zoom.us/j/7654919677',
+            '컴시': 'https://zoom.us/j/3650046422',
+            '과학': 'https://zoom.us/j/2693268647',
+            '사회': 'https://calendar.google.com/calendar/u/1/r?pli=1',
+            '체육': 'https://zoom.us/j/7760965125',
+            '플밍': 'https://zoom.us/j/6471668401',
+            '사물': 'https://zoom.us/j/3053522072',
+            '미술': 'https://zoom.us/j/5135798594',
+            '진로': 'https://zoom.us/j/3490119479',
+            'HR': 'https://calendar.google.com/calendar/u/1/r?pli=1',
+            'CA( 링크 없음! )': 'about:blank',
+            '자가진단':'https://hcs.eduro.go.kr/#/relogin'
+        }
+        let _1a = document.createElement("a");
+        let _2a = document.createElement("a");
+        let _3a = document.createElement("a");
+        let _4a = document.createElement("a");
+        let _5a = document.createElement("a");
+        let _6a = document.createElement("a");
+        let _7a = document.createElement("a");
+
+        function add(today_week) {
+            if(today_week == '수요일') {
+                _1a.href = zoom_location[timetable[today_week]['1교시']];
+                _1a.innerHTML = timetable[today_week]['1교시'];
+                _2a.href = zoom_location[timetable[today_week]['2교시']];
+                _2a.innerHTML = timetable[today_week]['2교시'];
+                _3a.href = zoom_location[timetable[today_week]['3교시']];
+                _3a.innerHTML = timetable[today_week]['3교시'];
+                _4a.href = zoom_location[timetable[today_week]['4교시']];
+                _4a.innerHTML = timetable[today_week]['4교시'];
+                _5a.href = zoom_location[timetable[today_week]['5교시']];
+                _5a.innerHTML = timetable[today_week]['5교시'];
+                _6a.href = zoom_location[timetable[today_week]['6교시']];
+                _6a.innerHTML = timetable[today_week]['6교시'];
+                _1a.target = '_blank';
+                _2a.target = '_blank';
+                _3a.target = '_blank';
+                _4a.target = '_blank';
+                _5a.target = '_blank';
+                _6a.target = '_blank';
+                _1class.appendChild(_1a);
+                _2class.appendChild(_2a);
+                _3class.appendChild(_3a);
+                _4class.appendChild(_4a);
+                _5class.appendChild(_5a);
+                _6class.appendChild(_6a);
+            } else {
+                _1a.href = zoom_location[timetable[today_week]['1교시']];
+                _1a.innerHTML = timetable[today_week]['1교시'];
+                _2a.href = zoom_location[timetable[today_week]['2교시']];
+                _2a.innerHTML = timetable[today_week]['2교시'];
+                _3a.href = zoom_location[timetable[today_week]['3교시']];
+                _3a.innerHTML = timetable[today_week]['3교시'];
+                _4a.href = zoom_location[timetable[today_week]['4교시']];
+                _4a.innerHTML = timetable[today_week]['4교시'];
+                _5a.href = zoom_location[timetable[today_week]['5교시']];
+                _5a.innerHTML = timetable[today_week]['5교시'];
+                _6a.href = zoom_location[timetable[today_week]['6교시']];
+                _6a.innerHTML = timetable[today_week]['6교시'];
+                _7a.href = zoom_location[timetable[today_week]['7교시']];
+                _7a.innerHTML = timetable[today_week]['7교시'];
+                _1a.target = '_blank';
+                _2a.target = '_blank';
+                _3a.target = '_blank';
+                _4a.target = '_blank';
+                _5a.target = '_blank';
+                _6a.target = '_blank';
+                _7a.target = '_blank';
+                _1class.appendChild(_1a);
+                _2class.appendChild(_2a);
+                _3class.appendChild(_3a);
+                _4class.appendChild(_4a);
+                _5class.appendChild(_5a);
+                _6class.appendChild(_6a);
+                _7class.appendChild(_7a);
+            }
+        }
+    
+        if(today_week == '월요일') {
+            add(today_week);
+        } else if(today_week == '화요일') {
+            add(today_week);
+        } else if(today_week == '수요일') {
+            add(today_week);
+        } else if(today_week == '목요일') {
+            add(today_week);
+        } else if(today_week == '금요일') {
+            add(today_week);
+        } else if(today_week == '주말') {
+            add(today_week);
+        }
+    
+    </script>
+</body>
+</html>

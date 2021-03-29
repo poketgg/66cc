@@ -174,7 +174,7 @@
             }
 
             .zaga, .dimigoin {
-                font-size : 2.2rem;
+                font-size : 2.1rem;
             }
     
     
@@ -186,7 +186,7 @@
             }
 
             .zaga, .dimigoin{
-                font-size : 1.5rem;
+                font-size : 1.4rem;
             }
 
             h9{
@@ -251,6 +251,10 @@
                 </td>
                 <br/>
             </tr> 
+            <td>0교시</td>
+            <td id="_0class"></td>
+        </tr>
+            </tr> 
                 <td>1교시</td>
                 <td id="_1class"></td>
             </tr>
@@ -291,7 +295,10 @@
             <h9>　Copyright. @DIMISEUNG BY. NC.　<br/></h9>
             <br></br>
             <h10>　이 사이트의 저작권은 @1615 배세웅 에게 있으며, 저작자 표시를 한 경우에 한하여, 비영리 목적으로 공유 및 재가공이 가능합니다.</h10></br>
-            　원본 : <a class = github href="https://github.com/poketgg/ZAL" target="blank"><b>깃허브</b></a> (README.md 참고바람.)</br> 
+            　원본 : <a class = github href="https://github.com/poketgg/ZAL" target="blank"><b>깃허브</b></a> (README.md 참고바람.)</br>
+            <br>
+            　경기도 안산시 단원구 사세충열로 94 한국디지털미디어고등학교<br>
+            　E-Mail : xodid1442@gmail.com 　|　 KAKAOTALK : xodid1442
            　
             <hr></hr>
     </div>
@@ -300,6 +307,7 @@
     <script>
         let timetable = {
             월요일: {
+                '0교시': '아침조회',
                 '1교시': '미술',
                 '2교시': '컴시',
                 '3교시': '국어',
@@ -309,6 +317,7 @@
                 '7교시': '창체',
             },
             화요일: {
+                '0교시': '아침조회',
                 '1교시': '사회',
                 '2교시': '수학',
                 '3교시': '영어',
@@ -318,6 +327,7 @@
                 '7교시': '진로',
             },
             수요일: {
+                '0교시': '아침조회',
                 '1교시': '과학',
                 '2교시': '사물',
                 '3교시': '사물',
@@ -326,6 +336,7 @@
                 '6교시': 'CA( 링크 없음! )'
             },
             목요일: {
+                '0교시': '아침조회',
                 '1교시': '수학',
                 '2교시': '컴시',
                 '3교시': '영어',
@@ -335,6 +346,7 @@
                 '7교시': '미술',
             },
             금요일: {
+                '0교시': '아침조회',
                 '1교시': '사물',
                 '2교시': '사회',
                 '3교시': '플밍',
@@ -345,6 +357,7 @@
 
             },
             주말: {
+                '0교시': '수업이 없어요 !',
                 '1교시': '수업이 없어요 !',
                 '2교시': '수업이 없어요 !',
                 '3교시': '수업이 없어요 !',
@@ -370,7 +383,7 @@
                 apm="오후　";
                 var msg =apm +(currentDate.getHours()-12)+"시 "
             }
-            
+
             msg += currentDate.getMinutes() + "분 ";
             msg += currentDate.getSeconds() + "초　"+  getTodayLabel()
             
@@ -395,6 +408,7 @@
         let a = new Date().getHours();
         let b  = new Date().getMinutes();
 
+        let _0class = document.getElementById("_0class");
         let _1class = document.getElementById("_1class");
         let _2class = document.getElementById("_2class");
         let _3class = document.getElementById("_3class");
@@ -418,8 +432,10 @@
             'HR': 'https://calendar.google.com/calendar/u/1/r?pli=1',
             'CA( 링크 없음! )': 'https://poketgg.github.io/ZAL/',
             '자가진단':'https://hcs.eduro.go.kr/#/relogin',
-            '수업이 없어요 !': 'https://poketgg.github.io/ZAL'
+            '수업이 없어요 !': 'https://poketgg.github.io/ZAL',
+            '아침조회': 'https://calendar.google.com/calendar/u/1/r?pli=1'
         }
+        let _0a = document.createElement("a");
         let _1a = document.createElement("a");
         let _2a = document.createElement("a");
         let _3a = document.createElement("a");
@@ -430,6 +446,8 @@
 
         function add(today_week) {
             if(today_week == '수요일') {
+                _0a.href = zoom_location[timetable[today_week]['0교시']];
+                _0a.innerHTML = timetable[today_week]['0교시'];
                 _1a.href = zoom_location[timetable[today_week]['1교시']];
                 _1a.innerHTML = timetable[today_week]['1교시'];
                 _2a.href = zoom_location[timetable[today_week]['2교시']];
@@ -442,12 +460,14 @@
                 _5a.innerHTML = timetable[today_week]['5교시'];
                 _6a.href = zoom_location[timetable[today_week]['6교시']];
                 _6a.innerHTML = timetable[today_week]['6교시'];
+                _0a.target = '_blank';
                 _1a.target = '_blank';
                 _2a.target = '_blank';
                 _3a.target = '_blank';
                 _4a.target = '_blank';
                 _5a.target = '_blank';
                 _6a.target = '_blank';
+                _0class.appendChild(_0a);
                 _1class.appendChild(_1a);
                 _2class.appendChild(_2a);
                 _3class.appendChild(_3a);
@@ -455,6 +475,8 @@
                 _5class.appendChild(_5a);
                 _6class.appendChild(_6a);
             } else {
+                _0a.href = zoom_location[timetable[today_week]['0교시']];
+                _0a.innerHTML = timetable[today_week]['0교시'];
                 _1a.href = zoom_location[timetable[today_week]['1교시']];
                 _1a.innerHTML = timetable[today_week]['1교시'];
                 _2a.href = zoom_location[timetable[today_week]['2교시']];
@@ -469,6 +491,7 @@
                 _6a.innerHTML = timetable[today_week]['6교시'];
                 _7a.href = zoom_location[timetable[today_week]['7교시']];
                 _7a.innerHTML = timetable[today_week]['7교시'];
+                _0a.target = '_blank';
                 _1a.target = '_blank';
                 _2a.target = '_blank';
                 _3a.target = '_blank';
@@ -476,6 +499,7 @@
                 _5a.target = '_blank';
                 _6a.target = '_blank';
                 _7a.target = '_blank';
+                _0class.appendChild(_0a);
                 _1class.appendChild(_1a);
                 _2class.appendChild(_2a);
                 _3class.appendChild(_3a);

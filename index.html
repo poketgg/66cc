@@ -122,9 +122,19 @@
             font-size: 0.8rem;
         }
 
+        ._8{
+            background-color: rgb(255, 0, 150);
+            font-size: 3.8rem;
+            color: white;
+            display: block;
+            width: 292px;
+            margin: auto;
+        }
+
         .github{
             font-size: 1.0rem;
         }
+        
     
     
         @media ( max-width: 1080px) {
@@ -286,8 +296,10 @@
             <tr></tr>
             <tr></tr>
         </tbody>
-
     </table>
+
+    <a class="_8" href="https://docs.google.com/spreadsheets/d/1pA-8fOwoVj4uvu4b-0TF701YtRi7VgUM9iFFVu9scfk/edit#gid=0" target="blank"><b>　방과후　</b></a>
+    <br></br>
 
     <div class="table2">
             <hr></hr>
@@ -315,6 +327,7 @@
                 '5교시': '영어',
                 '6교시': '체육',
                 '7교시': '창체',
+                
             },
             화요일: {
                 '0교시': '아침조회',
@@ -344,6 +357,7 @@
                 '5교시': '플밍',
                 '6교시': '플밍',
                 '7교시': '미술',
+                '　': '방과후',
             },
             금요일: {
                 '0교시': '아침조회',
@@ -354,6 +368,7 @@
                 '5교시': '과학',
                 '6교시': '국어',
                 '7교시': '컴시',
+                '　': '방과후',
 
             },
             주말: {
@@ -416,6 +431,7 @@
         let _5class = document.getElementById("_5class");
         let _6class = document.getElementById("_6class");
         let _7class = document.getElementById("_7class");
+        let _8class = document.getElementById("_8class");
 
         let zoom_location = {
             '수학': 'https://zoom.us/j/6838770867',
@@ -433,7 +449,8 @@
             'CA': 'https://docs.google.com/spreadsheets/d/18V1sR8k6bcavZv-RBwO7GUNHVMOpRcFNyVpn-KIYG9o/edit#gid=0',
             '자가진단':'https://hcs.eduro.go.kr/#/relogin',
             '수업이 없어요 !': 'https://poketgg.github.io/ZAL',
-            '아침조회': 'https://calendar.google.com/calendar/u/1/r?pli=1'
+            '아침조회': 'https://calendar.google.com/calendar/u/1/r?pli=1',
+            '방과후': 'https://docs.google.com/spreadsheets/d/1pA-8fOwoVj4uvu4b-0TF701YtRi7VgUM9iFFVu9scfk/edit#gid=0'
         }
         let _0a = document.createElement("a");
         let _1a = document.createElement("a");
@@ -443,6 +460,7 @@
         let _5a = document.createElement("a");
         let _6a = document.createElement("a");
         let _7a = document.createElement("a");
+        let _8a = document.createElement("a");
 
         function add(today_week) {
             if(today_week == '수요일') {
@@ -491,6 +509,8 @@
                 _6a.innerHTML = timetable[today_week]['6교시'];
                 _7a.href = zoom_location[timetable[today_week]['7교시']];
                 _7a.innerHTML = timetable[today_week]['7교시'];
+                _8a.href = zoom_location[timetable[today_week]['　']];
+                _8a.innerHTML = timetable[today_week]['　'];
                 _0a.target = '_blank';
                 _1a.target = '_blank';
                 _2a.target = '_blank';
@@ -499,6 +519,7 @@
                 _5a.target = '_blank';
                 _6a.target = '_blank';
                 _7a.target = '_blank';
+                _8a.target = '_blank';
                 _0class.appendChild(_0a);
                 _1class.appendChild(_1a);
                 _2class.appendChild(_2a);
@@ -507,6 +528,7 @@
                 _5class.appendChild(_5a);
                 _6class.appendChild(_6a);
                 _7class.appendChild(_7a);
+                _8class.appendChild(_8a);
             }
         }
     

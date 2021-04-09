@@ -1,8 +1,5 @@
-# poketgg.github.io/66cc
+# poketgg.github.io/main
+# poketgg.github.io/11cc ~ 66cc
 
 Copyright .@DIMISEUNG BY. NC.
 ## 이 코드 및 사이트에 대한 저작권은 @1615 배세웅 에게 있으며, 원 저작자 표시를 한 경우, 비영리 목적으로 사용이 가능합니다.
-
-현재는 6반만 지원합니다.
-
-추후에 숙련되는 대로, 5반까지 같이 지원할 예정입니다. ( 원하는 반이 있으면, 시간표와 줌 링크를 모두 제공하여 주시면 제작 가능합니다. )
